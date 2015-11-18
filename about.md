@@ -3,9 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
+![Lee Clemmer Photograph](/images/profile_2013.jpeg)
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+I'm a German-American family man living in Amish country, Pennsylvania. SAP is where I work and data analysis is what I do. This my place to jot down the occasional note to the world.
