@@ -1,41 +1,449 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yay!</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>Lee Clemmer</title>
+    <description>Occasional writing on data-related topics.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 18 Nov 2015 11:59:18 -0500</pubDate>
-    <lastBuildDate>Wed, 18 Nov 2015 11:59:18 -0500</lastBuildDate>
+    <link>http://leeclemmer.github.io/</link>
+    <atom:link href="http://leeclemmer.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 18 Nov 2015 16:02:38 -0500</pubDate>
+    <lastBuildDate>Wed, 18 Nov 2015 16:02:38 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;Updating.
-You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Leaked Snapchat Data Uncovers Surprising Patterns</title>
+        <description>&lt;p&gt;A new year, a new data leak.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;On New Year’s Eve an anonymous group or person leaked about 4.6 million Snapchat usernames along with the associated phone numbers, save for the last two digits.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;The leak came about a week after Snapchat dismissed the threat – brought to their attention by Gibson Security - in a &lt;a href=&quot;http://blog.snapchat.com/post/71353347590/finding-friends-with-phone-numbers&quot;&gt;blogpost&lt;/a&gt;: “Theoretically, if someone were able to upload a huge set of phone numbers, like every number in an area code, or every possible number in the U.S., they could create a database of the results and match usernames to phone numbers that way. Over the past year we’ve implemented various safeguards to make it more difficult to do. We recently added additional counter-measures and continue to make improvements to combat spam and abuse.”&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Apparently their counter-measures weren’t enough.&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Soon after the breach, the alleged hackers responded to requests for comment by &lt;em&gt;&lt;a href=&quot;http://www.theverge.com/2014/1/1/5263156/alleged-snapchat-hackers-explain-how-and-why-they-leaked-data-on-accounts&quot;&gt;The Verge&lt;/a&gt;&lt;/em&gt;: “Our motivation behind the release was to raise the public awareness around the issue, and also put public pressure on Snapchat to get this exploit fixed,” they say. “Security matters as much as user experience does.”  Snapchat CEO responded to the breach in &lt;a href=&quot;http://www.today.com/video/today/53971379&quot;&gt;this NBC interview&lt;/a&gt;: “We thought we had done enough.”&lt;/p&gt;
 
+&lt;p&gt;I examined the data to see if there’s anything we can learn.&lt;/p&gt;
+
+&lt;p&gt;What I discovered was something I hadn’t really thought of before, namely information encoded within other information.  A straight-forward example is geographical information being encoded in the first three digits of a telephone number. Looking at usernames, I learned that we humans sometimes include quite a bit of information about ourselves in those usernames – for example our actual, real name.  So a username can be more than just a username.&lt;/p&gt;
+
+&lt;p&gt;Let’s start by taking a look at the telephone numbers. We can see what users have been affected by this data breach by taking a look at the area codes of the phone numbers (to see if you are part of the leaked data, &lt;a href=&quot;http://lookup.gibsonsec.org/&quot;&gt;you can search for your name here&lt;/a&gt;.) As mentioned in various reports, the leaks only affect North American users.  You can find the &lt;a href=&quot;http://en.wikipedia.org/wiki/List_of_North_American_Numbering_Plan_area_codes&quot;&gt;list of North American phone numbers on Wikipedia&lt;/a&gt;: there are 323 American and 41 Canadian area codes.  After loading up the data in R (the application for statistical computing), I split the telephone numbers and counted the area codes.  There are 76 in total, two from Canada and the rest from the U.S. (&lt;a href=&quot;/files/Snapchat Area Code Frequencies and States.csv&quot;&gt;download CSV here&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Here are the top 10 area codes:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Area Code&lt;/th&gt;
+      &lt;th&gt;Frequency&lt;/th&gt;
+      &lt;th&gt;State&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;815&lt;/td&gt;
+      &lt;td&gt;215,953&lt;/td&gt;
+      &lt;td&gt;Illinois&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;909&lt;/td&gt;
+      &lt;td&gt;215,855&lt;/td&gt;
+      &lt;td&gt;California&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;818&lt;/td&gt;
+      &lt;td&gt;205,544&lt;/td&gt;
+      &lt;td&gt;California&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;951&lt;/td&gt;
+      &lt;td&gt;200,008&lt;/td&gt;
+      &lt;td&gt;California&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;310&lt;/td&gt;
+      &lt;td&gt;196,183&lt;/td&gt;
+      &lt;td&gt;California&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;847&lt;/td&gt;
+      &lt;td&gt;195,925&lt;/td&gt;
+      &lt;td&gt;Illinois&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;720&lt;/td&gt;
+      &lt;td&gt;188,285&lt;/td&gt;
+      &lt;td&gt;Colorado&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;323&lt;/td&gt;
+      &lt;td&gt;168,565&lt;/td&gt;
+      &lt;td&gt;California&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;347&lt;/td&gt;
+      &lt;td&gt;166,374&lt;/td&gt;
+      &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;917&lt;/td&gt;
+      &lt;td&gt;165,420&lt;/td&gt;
+      &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Next I fired up SAP Lumira to take advantage of the great mapping features it has (&lt;a href=&quot;http://go.sap.com/product/analytics/lumira.html&quot;&gt;you can get your free copy here&lt;/a&gt;).  Here’s a choropleth map showing which states have been affected the most by the leak. If you live in a grey state, you’re not part of the leak.  If you’re in a green state, you may want to check to see if you’re data has been compromised (&lt;a href=&quot;http://lookup.gibsonsec.org/&quot;&gt;you can check here&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/snapchat_leaks_image_1.png&quot; alt=&quot;Snapchat Data Map&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The leaked data also comes marked up with regional information below the state level, which after looking into a bit I’m confident is accurate.  Here are the top 10 regional locations affected by the leaks (&lt;a href=&quot;/files/Snapchat Regional Frequencies.csv&quot;&gt;download CSV here&lt;/a&gt;):&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Region&lt;/th&gt;
+      &lt;th&gt;Frequency&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;New York City&lt;/td&gt;
+      &lt;td&gt;334,445&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Miami&lt;/td&gt;
+      &lt;td&gt;222,321&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Chicago Suburbs&lt;/td&gt;
+      &lt;td&gt;215,953&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Eastern Los Angeles&lt;/td&gt;
+      &lt;td&gt;215,855&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Los Angeles&lt;/td&gt;
+      &lt;td&gt;209,888&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;San Fernando Valley&lt;/td&gt;
+      &lt;td&gt;205,544&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Southern California&lt;/td&gt;
+      &lt;td&gt;200,008&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Northern Chicago Suburbs&lt;/td&gt;
+      &lt;td&gt;195,925&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Denver-Boulder&lt;/td&gt;
+      &lt;td&gt;188,285&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Downtown Los Angeles&lt;/td&gt;
+      &lt;td&gt;168,565&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As this dataset is incomplete, we can only really draw conclusions about what users have been affected by this leak.  Some larger urban areas – like my Philadelphia – are fairly low on the list. I wouldn’t conclude that Snapchat is unpopular there, simply that it wasn’t hit as hard.&lt;/p&gt;
+
+&lt;p&gt;Now let’s take a look at the usernames and see what kind of information is contained in those.  To start, we’ll just get a sense of how long these usernames are.  What we get is a nice, nearly normal distribution with a bit of right skew.  Looking at the data, I would guess that Snapchat requires a username of between 3 and 15 characters.  However, there are exactly 5 notable outliers (excluded in the histogram below), users for whom their email address has been published instead of their username (unless these 5 could choose to have their username be their email?).  I wonder how these 5 got to be included in this data set.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/snapchat_leaks_image_2.png&quot; alt=&quot;Distribution of Name Length&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A lot of usernames appear to be people’s actual names.  After Googling random ones, it turns out it’s almost trivially easy to start connecting this data to additional information like names, pictures, Facebook accounts, Tumblr blogs, Twitter accounts, etc.&lt;/p&gt;
+
+&lt;p&gt;So what are popular names of Snapchat users?  I decided to count how many usernames started with an actual first name.  To get a list of first names to search against, I got a list of &lt;a href=&quot;http://www.ssa.gov/oact/babynames/limits.html&quot;&gt;popular baby names posted by the Social Security Administration&lt;/a&gt; and created a list of the top 50 boy and girl names (so 100 names in total) since 1980.  Next I counted how many times each name occurred at the beginning of a Snapchat username.  Of all Snapchat usernames, about 8% start with a top 100 name. Here’s the top 10 list of most common first names a username starts with:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;John&lt;/li&gt;
+  &lt;li&gt;Sarah&lt;/li&gt;
+  &lt;li&gt;Ashley&lt;/li&gt;
+  &lt;li&gt;Emily&lt;/li&gt;
+  &lt;li&gt;Daniel&lt;/li&gt;
+  &lt;li&gt;Ryan&lt;/li&gt;
+  &lt;li&gt;Eric&lt;/li&gt;
+  &lt;li&gt;Brian&lt;/li&gt;
+  &lt;li&gt;Maria&lt;/li&gt;
+  &lt;li&gt;Lauren&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Another common pattern in usernames is to append a number at the end of your usernames.  How many numbers?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/snapchat_leaks_image_3.png&quot; alt=&quot;Distribution of Length of Appending Digits&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Although two digits is the most common number of ending digits, we’ll take a look at four digits to get a better look at years.  What does this distribution look like?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/snapchat_leaks_image_4.png&quot; alt=&quot;Distribution of Four Number Digits&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly a lot of numbers other than years are chosen, so let’s zoom into the thick spike around the 1900s.  Also, let’s assume that the years are birth years and then turn the years into age.  Here is a five to 50 age distribution:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/snapchat_leaks_image_5.png&quot; alt=&quot;Four Year Digits Converted to Age&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We see a big spike for age 13, which means many people chose to end their username in the number 2000.  Same for age 44: ending your username in 1969 was unusually popular.  I wouldn’t be surprised if the actual Snapchat age distribution looked similar to this.  We see the biggest change of users ranging in age from 13 to 23, so roughly middle school through college.  Keep in mind, however, that these conclusions are based on a number of assumptions and should be taken with a very large grain of salt.&lt;/p&gt;
+
+&lt;p&gt;Finally, there are all kinds of other factoids contained in these names.  The word “cat” occurs twice as many times as “dog”.  Lions are twice as popular as tigers.  There are over 5,000 sexy Snapchat users.  And so on.  A username is not just a username, but often tells us a bit more about the person lurking behind that name.&lt;/p&gt;
+
+&lt;p&gt;Gibson security has &lt;a href=&quot;http://lookup.gibsonsec.org/&quot;&gt;some good advice&lt;/a&gt; for those whose information has been compromised: you can delete your Snapchat account, change your phone number, and never give out your phone number if you don’t have to.  The moral of the story is that even super-popular services getting billion dollar buyout offers aren’t immune to user data leaks, so be sure you take your online privacy seriously.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;http://www.forbes.com/sites/sap/2014/01/08/leaked-snapchat-data-uncovers-surprising-patterns/&quot;&gt;This story was originall published on Forbes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 18 Nov 2015 06:19:16 -0500</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/11/18/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/11/18/welcome-to-jekyll.html</guid>
+        <pubDate>Wed, 08 Jan 2014 12:12:16 -0500</pubDate>
+        <link>http://leeclemmer.github.io/2014/01/08/leaked-snapchat-data-uncovers-surprising-patterns.html</link>
+        <guid isPermaLink="true">http://leeclemmer.github.io/2014/01/08/leaked-snapchat-data-uncovers-surprising-patterns.html</guid>
         
         
-        <category>jekyll</category>
+      </item>
+    
+      <item>
+        <title>How to Create a Google Earth Choropleth Map: Chester County 2012 General Election</title>
+        <description>&lt;p&gt;&lt;strong&gt;Summary:&lt;/strong&gt; In this post I will show you how I created a Google Earth choropleth map of the 2012 Presidential Election results of the precincts in Chester County, Pennsylvania.  Here is the final result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_01.jpg&quot; alt=&quot;Choropleth Post Image 01&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are the links to some of the tools and resources we’ll be talking about (for easy later reference):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.census.gov/geo/www/tiger/tgrshp2010/tgrshp2010.html&quot;&gt;2010 Census TIGER/Line® Shapefiles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://geodacenter.asu.edu/software/downloads&quot;&gt;GeoDa&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.zonums.com/shp2kml.html&quot;&gt;shp2kml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;For different scenarios it is useful to understand people’s political leanings on a granular level.  For me personally, this interest started because I am currently looking to buy a house in Chester County, but obviously there are many other reasons why such a map might be useful (e.g. for political campaigns who want to maximize resource expenditure).&lt;/p&gt;
+
+&lt;p&gt;Most election result data and maps only go down to the level of individual counties, &lt;a href=&quot;http://www.washingtonpost.com/wp-srv/special/politics/election-map-2012/president/&quot;&gt;such as this Washington Post map&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_02.png&quot; alt=&quot;Choropleth Post Image 02&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So in a toss-up state, Chester County is a toss-up county: 49.7% Romney and 49.2% Obama.  For purposes of looking at real estate, this is however still too coarse.  So I wondered how I could get at a more detailed breakdown.&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;Here’s what we’ll be doing in a nutshell: get election data and tie it to the map shapefiles of Chester County voting precincts, then converting those shapefiles to KML files so we can view the map in Google Earth.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-the-data&quot;&gt;Getting the Data&lt;/h2&gt;
+
+&lt;p&gt;The lowest level of political data I could get my hands on were the Chester County (CC) precinct results, which are conveniently located here: &lt;a href=&quot;http://www.chesco.org/index.aspx?NID=2367&quot;&gt;Chester County Election Results Archive&lt;/a&gt;.  Inconveniently, the data for each precinct is contained in a separate PDF.  To use the data in our map, we’ll need it all together in one place.  So I went through all 200+ PDFs and transcribed the precinct data in Excel (yes it sucked).  &lt;a href=&quot;/files/Chester-County-2012-Presidental-Election-Data.csv&quot;&gt;Here’s the data in CSV format&lt;/a&gt;.  Note that I only picked out votes for Romney or Obama, not all the other information contained in the precinct reports.&lt;/p&gt;
+
+&lt;p&gt;So now we have the voting data, we’ll need the map data (in the form of &lt;a href=&quot;http://en.wikipedia.org/wiki/Shapefile&quot;&gt;shapefiles&lt;/a&gt;) of Chester County precincts.  We could create those ourselves, but who has time for that.  What I found was the &lt;a href=&quot;http://www.census.gov/geo/www/tiger/tgrshp2010/tgrshp2010.html&quot;&gt;2010 Census TIGER/Line® Shapefiles&lt;/a&gt; (there’s also the &lt;a href=&quot;http://www2.census.gov/cgi-bin/shapefiles/state-files?state=42&quot;&gt;2008 TIGER/Line® Shapefiles for: Pennsylvania&lt;/a&gt;).  Click on “Download Shapefiles” on the left, then “Voting Districts” from the dropdown and then select the state and county.  &lt;a href=&quot;http://www.leeclemmer.com/wp-content/uploads/2013/05/tl_2010_42029_vtd10.zip&quot;&gt;You’ll get a package like this one for Chester County&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now that we have the data and the map shapefiles we come to the hardest part of this exercise: marrying the data with the map.&lt;/p&gt;
+
+&lt;h2 id=&quot;map-meet-data-data-meet-map&quot;&gt;Map Meet Data, Data Meet Map&lt;/h2&gt;
+
+&lt;p&gt;So admittedly I am not expert on shapefiles, I have plenty more learning to do there.  For a better explanation of what a shapefile is, &lt;a href=&quot;http://en.wikipedia.org/wiki/Shapefile&quot;&gt;consult your encyclopedia&lt;/a&gt;.  Important for us, there are two files that interact: the actual shapefile (.shp extension) which contains the geometry of polygons, and a data file (.dbf extension) which contains data connected to the shapes - in our cases respresenting voting precincts.&lt;/p&gt;
+
+&lt;p&gt;From my Google searches the following tasks are best accomplished in &lt;a href=&quot;http://www.esri.com/software/arcgis&quot;&gt;ArcGIS&lt;/a&gt;, the industry standard mapping software by a company called esri, but it costs.  So we will use three other tools: GeoDa, Excel 2010, and Access 2010. Theoretically we don’t really need GeoDa, but it helps to see what’s going on.&lt;/p&gt;
+
+&lt;p&gt;So when you open the shapefile (.shp extension) in GeoDa (&lt;a href=&quot;https://geodacenter.asu.edu/software/downloads&quot;&gt;free download&lt;/a&gt;) you’ll see something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_03.png&quot; alt=&quot;Choropleth Post Image 03&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; 
+You can also look at the data associated with the shapefile which is contained in the .dbf file.  Just click on that little table icon (third from left) and you’ll see something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_04.png&quot; alt=&quot;Choropleth Post Image 04&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s nothing there now that’s really interesting for us, other than the names of the actual voting precincts.  What we need is the voting data.  In the source data file (the .csv file), we have votes for both Romney and Obama.  To combine these in just one column (since the coloring will be based on one variable as contained in one column) I just used the percentage of votes for Obama, with Romney representing the flipside.  So a 34% vote Obama would simply mean a 66% vote for Romney (nevermind the 1% third party candidates).  This’ll make sense when you take a look at the Category Editor screenshot below and look at the breaks compared to the labels.&lt;/p&gt;
+
+&lt;p&gt;At this point we could just add a column and input the voting percentages for Obama for each precinct.  This is what I initially did, but editing this in Excel is much faster, so we’ll do that.  Here’s what you need to do:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make copies of all the shapefiles and work on those&lt;/li&gt;
+  &lt;li&gt;In Excel, open the .dbf file&lt;/li&gt;
+  &lt;li&gt;Add a column called “Vote” with the percentage of votes for Obama (or Romney, doesn’t matter)&lt;/li&gt;
+  &lt;li&gt;You cannot save back to .dbf format, so save as .xlsx&lt;/li&gt;
+  &lt;li&gt;Open MS Access&lt;/li&gt;
+  &lt;li&gt;Under External Data import Excel and choose the .xlsx file you just created; be sure to select the first row as column headers&lt;/li&gt;
+  &lt;li&gt;Then export it (under External Data &amp;gt; Export &amp;gt; More) as a dBase File. Pick a name and click Ok&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now when you reopen the shapefile in GeoDa, you’ll see the column you just added:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_05.png&quot; alt=&quot;Choropleth Post Image 05&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;color-coding-the-map-choroplethic&quot;&gt;Color-coding the Map: Choroplethic!&lt;/h2&gt;
+
+&lt;p&gt;At this point, you can already create a choropleth map in GeoDa.  Right-click on the map and select Change Current Map Type &amp;gt; Create New Custom.  Play around with the breaks and labels and such.  Here’s what I came up with:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_06.png&quot; alt=&quot;Choropleth Post Image 06&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_07.png&quot; alt=&quot;Choropleth Post Image 07&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Already pretty cool!  But we’d like to see some of the underlying geographic data so we can do some more in-depth analysis of what’s going on. For example, why is there such a big Obama supporting precinct surrounded by Republican precincts in the lower left corner?&lt;/p&gt;
+
+&lt;p&gt;This last part is thankfully easy.&lt;/p&gt;
+
+&lt;p&gt;You’ll need to a &lt;a href=&quot;http://www.zonums.com/shp2kml.html&quot;&gt;download a little stand-alone program called shp2kml&lt;/a&gt;.  This will convert your .shp file (including data) into a .kml file which can be viewed on Google Earth.  Here are the settings I used:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_08.png&quot; alt=&quot;Choropleth Post Image 08&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_09.png&quot; alt=&quot;Choropleth Post Image 09&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_10.png&quot; alt=&quot;Choropleth Post Image 10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_11.png&quot; alt=&quot;Choropleth Post Image 11&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On that last screen, click “Create and Open”, pick a file name, and voila, Google Earth opens with your awesome choropleth map: sweet!&lt;/p&gt;
+
+&lt;p&gt;Now we can see that in an otherwise sparsely populated district, we find Lincoln University: this likely explains why there is such a pro-Obama precinct in otherwise Republican territory:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/choropleth_12.png&quot; alt=&quot;Choropleth Post Image 12&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 May 2013 00:00:00 -0400</pubDate>
+        <link>http://leeclemmer.github.io/2013/05/14/how-to-create-a-google-earth-choropleth-map.html</link>
+        <guid isPermaLink="true">http://leeclemmer.github.io/2013/05/14/how-to-create-a-google-earth-choropleth-map.html</guid>
         
-        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Post-Election Model Evaluation Against Actual Results: a Victory for State Polls</title>
+        <description>&lt;p&gt;So, here we are, November 7, and Barack Obama has been re-elected POTUS.  This came as a surprise to no-one who’s been watching the polls and following &lt;a href=&quot;http://fivethirtyeight.blogs.nytimes.com/&quot;&gt;Nate Silver&lt;/a&gt;.  Well, maybe to Dean Chambers of Unskewedpolls.com.  Poor guy.&lt;/p&gt;
+
+&lt;p&gt;Nate did extremely well, correctly predicting all states and the overall election.  He had Florida at 50/50, and here it is, still undecided because it’s so close.&lt;/p&gt;
+
+&lt;p&gt;And how did my humble prediction model do? Equally well! (&lt;a href=&quot;/2012/11/06/competing-with-nate-silver-in-under-200-lines-of.html&quot;&gt;Read yesterday’s predictions here.&lt;/a&gt;)  Here are Nate’s and my predictions for competitive states (any state beyond 100% certainty):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-07-post-election-1.png&quot; alt=&quot;2012-11-07 Post Election Image 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Actual winners highlighted in blue or red.  The sole holdout is Florida, which we had at 50/50.
+Taking a look at my projected likely outcomes for an Obama win:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-07-post-election-2.png&quot; alt=&quot;2012-11-07 Post Election Image 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The first two paths to victory are his actual paths to victory.  At the moment, CNN has Obama with 303 Electoral College votes, but if Obama wins Florida, he’ll get the 332. The outcomes above reflect the fact that Obama is slightly more likely to get Florida than not, and in actual fact this is what it’s looking like right now.&lt;/p&gt;
+
+&lt;p&gt;Another way to look at the accuracy of the model is to compare the computed state averages based on state polls to the actual election outcomes:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-07-post-election-3.png&quot; alt=&quot;2012-11-07 Post Election Image 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What we’re looking at here is the competitive states, sorted by how much the actual spread (based on election results) between D and R varied from the projected spread. One way to read this is that the undecideds broke more one way than the other.  In Arizona, for example, the polls had Obama at 43%, which is what he actually got. Romney, however, picked up 55% of the vote instead of the projected 50%.  This could be interpreted by reasoning that the additional 5% that Romney received were undecideds in the poll.  The average spread difference in these competitive states was only 2 - not bad!  Looks like the state polls were pretty good indicators of how the election would pan out.&lt;/p&gt;
+
+&lt;p&gt;Overall, my simple model did extremely well, actually surprisingly so, given how simple it is. The way it works is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Take the average D and R percentage and margin of error of the past X number of state polls for a given state (I’ve been using 10) for all states&lt;/li&gt;
+  &lt;li&gt;Simulate the election outcome by randomly picking a vote percentage value within the margin of error for each state, determining the winner, and allocating the appropriate number of Electoral College votes for the winner&lt;/li&gt;
+  &lt;li&gt;Do this 1,000,000 times and determine the percentage that each candidate won (or there was a tie); this is a Monte Carlo simulation to determine the probabilities of an outcome&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s basically it.  How many polls to look back in this case was pretty arbitrary (10).  Using a lower number gives you possibly a bit fresher set of data (the polls were taken more recently) but leaves you a bit more exposed to potential outliers.  For example, if you look at &lt;a href=&quot;/2012/11/06/competing-with-nate-silver-in-under-200-lines-of.html&quot;&gt;my post from yesterday&lt;/a&gt;, you can see that using only the past 5 polls Florida had a probability of 37% Dem to 63% Rep.  Here are the past 5 polls:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-07-post-election-4.png&quot; alt=&quot;2012-11-07 Post Election Image 4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can see here that the InsiderAdvantage poll was an outlier and had Romney at +5.  Using the past 10 polls smoothed this outlier out.&lt;/p&gt;
+
+&lt;p&gt;What’s remarkable to me is the accuracy of this model given how dumb it is.  Part of Nate’s secret sauce is his weighting of polls. You can see the weights when you hover over the little bar chart. For example, the weight given to the InsiderAdvantage polls was 0.57976 vs. 1.411115 for the PPP poll:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-07-post-election-5.png&quot; alt=&quot;2012-11-07 Post Election Image 5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We don’t know exactly how these numbers are determined, but we know that variables such as time, polling house effect, sample size, etc. go into this weight. My model did none of this weighting, which is probably the first area I would start improving it. Nonetheless, the results are quite similar, so the question is, how much bang for your buck do we get from additional complexity.  There’s of course also the possibility that this simple model just happened to work out, and that under different conditions a more nuanced approached would be more accurate.  This is probably the more likely case.  But the takeaway is that you don’t need an overly complex model to come up with some pretty decent predictions on your own.&lt;/p&gt;
+
+&lt;p&gt;Another area where the model fudges is in taking the average: it takes the poll averages (e.g. 50% Obama and 48% Obama averages out to 49% Obama), but it also averages the margin of error.  Well, the more data you have and the larger the sample of voters that were surveyed, the smaller the margin of error will become.  I did not take this fact into consideration and simply averaged the margin of errors, yielding undue uncertainty for each average.
+My model also did not take other factors into consideration in making the final prediction: no economic factors or national polls - just the state polls.&lt;/p&gt;
+
+&lt;p&gt;In all, I finish with the following observations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In 2012, state polls were excellent predictors of the election outcome when considered in the aggregate.  It is finally time for the media to stop writing articles about single polls without putting them into the context of the larger picture.  If a candidate is up by 2 points in state, we’ll see polls that show a candidate up 4 and tied.  Putting out an article talking about a tied race is simply misleading.&lt;/li&gt;
+  &lt;li&gt;Nate talked about the possibility of a systemic bias in the polls.  There appeared to be none when considered in the aggregate.&lt;/li&gt;
+  &lt;li&gt;A model doesn’t have to be complex to be of value and reveal underlying trends in a set of data.&lt;/li&gt;
+  &lt;li&gt;Data trumps gut feelings and intuition in making election predictions.  Be wary of pundits who don’t talk about their conclusions based on what’s happening in the polls or other relevant data.&lt;/li&gt;
+  &lt;li&gt;Python rocks!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 07 Nov 2012 00:00:00 -0500</pubDate>
+        <link>http://leeclemmer.github.io/2012/11/07/post-election-model-evaluation-against-actual.html</link>
+        <guid isPermaLink="true">http://leeclemmer.github.io/2012/11/07/post-election-model-evaluation-against-actual.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Competing with Nate Silver in Under 200 Lines of Python Code - Election 2012 Result Predictions</title>
+        <description>&lt;p&gt;UPDATE: &lt;a href=&quot;/2012/11/07/post-election-model-evaluation-against-actual.html&quot;&gt;Post-election analysis here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s November 6, and over 18 months of grueling and never-ending campaigning is finally coming to an end.  I’m admittedly a bit of a political news junkie and check &lt;a href=&quot;http://www.memeorandum.com/&quot;&gt;memeorandum&lt;/a&gt; religiously to get a pulse of what’s being talked about.  Together with the &lt;a href=&quot;http://www.wired.com/business/2012/04/opinion-baio-site-bias/&quot;&gt;Chrome plugin visualizing political bias&lt;/a&gt;, it’s a great tool.&lt;/p&gt;
+
+&lt;p&gt;However, the past few years have been especially partisan and the rhetoric in the blogosphere is rancid.  So it was truly a breath of fresh air when I discovered Nate Silver in the beginning of the summer.  No bullshit - just the facts.  What a concept!  So Nate has been become the latest staple of my info diet.&lt;/p&gt;
+
+&lt;p&gt;He’s been catching a ton of flack in the past few months for his statistical, evidence based model that has consistently favored Obama in spite of media hype to the contrary.  All of the arguments against him don’t really hold much weight unless they are actually addressing the model himself.&lt;/p&gt;
+
+&lt;p&gt;One article in particular caught my attention: &lt;a href=&quot;http://dailycaller.com/2012/11/01/is-nate-silvers-value-at-risk/&quot;&gt;“Is Nate Silver’s value at risk?”&lt;/a&gt; by Sean Davis over at The Daily Caller.  His argument basically boils down to the question of whether state polls are accurate in predicting election outcomes, and whether Nate Silver’s model has relied to heavily on this data.  After re-creating Nate’s model (in Excel?!), Sean writes:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;After running the simulation every day for several weeks, I noticed something odd: the winning probabilities it produced for Obama and Romney were nearly identical to those reported by FiveThirtyEight. Day after day, night after night. For example, based on the polls included in RealClearPolitics’ various state averages as of Tuesday night, the Sean Davis model suggested that Obama had a &lt;a href=&quot;https://pbs.twimg.com/media/A6lmDZJCAAAWSX0.png:large&quot;&gt;73.0% chance of winning the Electoral College&lt;/a&gt;. In contrast, Silver’s FiveThirtyEight model as of Tuesday night forecast that Obama had a 77.4% chance of winning the Electoral College.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;So what gives? If it’s possible to recreate Silver’s model using just Microsoft Excel, &lt;a href=&quot;http://www.thumbstacks.com/&quot;&gt;a cheap Monte Carlo plug-in&lt;/a&gt;, and poll results that are widely available, then what real predictive value does Silver’s model have?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The answer is: not all that much beyond what is already contained in state polls. Why? Because the FiveThirtyEight model is a complete slave to state polls. When state polls are accurate, FiveThirtyEight looks amazing. But when state polls are incorrect, FiveThirtyEight does quite poorly. That’s why my very simple model and Silver’s very fancy model produce remarkably similar results — they rely on the same data. Garbage in, garbage out.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So what happens if state polls are incorrect?&lt;/p&gt;
+
+&lt;p&gt;It’s a good question, although Sean’s answer isn’t particularly satisfactory: he basically says we probably don’t have enough data.&lt;/p&gt;
+
+&lt;p&gt;However, this piqued my interest… was it really so easy to emulate his model?  I wanted to find out more… the Monte Carlo plugin is $129: screw that.  I bit of Googling later and it turns out Monte Carlo simulations are &lt;a href=&quot;http://niallohiggins.com/2007/07/05/monte-carlo-simulation-in-python-1/&quot;&gt;pretty easy to do in Python&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So after creating a few arrays to hold the latest polls for each state (via both RealClearPolitics and 538), I ran the numbers. I’ll perhaps go into the code in a separate post, but for right now, let me just post my predictions along with Nate’s.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with state-by-state probabilities.  I’ve listed Nate’s state probabilities, and then two version of my predictions.  The model I’m using is really super simple.  I take the average of the past X number of polls and then run the Monte Carlo simulation on those percentages and margin of errors.  That’s how I come up with the state probabilities.  The “Diff” column then lists the difference between my predictions and Nate’s predictions.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-06-election-1.png&quot; alt=&quot;2012-11-06 Election Image 01&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Everything is in the general ballpark, which for under 200 lines of Python code isn’t bad I think!  The average difference using the past 10 polls is 5%, while the average difference using the past 5 polls is 4% (looking only at those states where our probabilities differed).  Like I said, not bad, and in no case, do we predict different winners altogether (with the exception of a the 5 poll projection calling for Romney to win Florida).&lt;/p&gt;
+
+&lt;p&gt;So, who’s gonna win it all?  Using the above percentages and simulating an election 1,000,000 times, I get the following, using first the past 10 and then then past 5 results:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-06-election-2.png&quot; alt=&quot;2012-11-06 Election Image 02&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Using the 10 last polls is somewhat close to Nate, but overall, again, we’re in the same ballpark and the story being told is the same.  Obama is the heavy favorite to win it tonight with roughly 10:1 odds in his favor.&lt;/p&gt;
+
+&lt;p&gt;Now let’s look at the most likely paths to victory for each candidate.  For Obama, the following 5 paths occurred most often in the simulation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-06-election-3.png&quot; alt=&quot;2012-11-06 Election Image 03&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;M2 here stands for Maine’s 2nd Congressional District.  Maine and Nebraska apportion their Electoral Votes one for each Congressional District (Maine has 2, Nebraska 3) plus 2 for the overall vote winner.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-06-election-4.png&quot; alt=&quot;2012-11-06 Election Image 04&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see why Ohio is so pivotal for Romney.  Here are the most likely paths without Ohio:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2012-11-06-election-5.png&quot; alt=&quot;2012-11-06 Election Image 05&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Certainly puts his late push into PA into some perspective.&lt;/p&gt;
+
+&lt;p&gt;Well if you do happen upon this post and are actually interested in the Python code, let me know, and I might do a follow-up post looking at the code specifically.&lt;/p&gt;
+
+&lt;p&gt;Cheers, and enjoy the election!  I’d put my money on Obama!&lt;/p&gt;
+
+&lt;p&gt;UPDATE: &lt;a href=&quot;/2012/11/07/post-election-model-evaluation-against-actual.html&quot;&gt;Post-election analysis here&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 06 Nov 2012 00:00:00 -0500</pubDate>
+        <link>http://leeclemmer.github.io/2012/11/06/competing-with-nate-silver-in-under-200-lines-of.html</link>
+        <guid isPermaLink="true">http://leeclemmer.github.io/2012/11/06/competing-with-nate-silver-in-under-200-lines-of.html</guid>
+        
+        <category>elections</category>
+        
+        <category>politics</category>
+        
+        <category>predictions</category>
+        
+        <category>nate silver</category>
+        
+        <category>statistics</category>
+        
         
       </item>
     
