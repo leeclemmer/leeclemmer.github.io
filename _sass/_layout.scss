@@ -193,6 +193,13 @@
 /**
  * Posts
  */
+.post {
+    // Gaps between posts items, but not on the first one
+    &:not(:first-child) {
+        margin-top: $spacing-unit * 3
+    }    
+}
+
 .post-header {
     margin-bottom: $spacing-unit;
 }
