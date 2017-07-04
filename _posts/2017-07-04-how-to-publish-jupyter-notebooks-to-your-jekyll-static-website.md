@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "2017 07 04 How to Publish Jupyter Notebooks to Your Jekyll Static Website"
+title: "How to Publish Jupyter Notebooks to Your Jekyll Static Website"
+comments: true
 tags:
     - python
     - notebook
