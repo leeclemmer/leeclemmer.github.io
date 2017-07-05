@@ -59,10 +59,11 @@
     <p>This post was written in a Jupyter Notebook. Here’s how I got it onto my Jekyll
 website.</p>
 
-<p><a href="https://gist.github.com/tgarc/7d6901858ef708030c19">Venture here</a> and download
-the following GitHub gists (thanks to <a href="https://github.com/cscorley">cscorley</a>
-and <a href="https://github.com/tgarc">tgarc</a> for putting these together): <code class="highlighter-rouge">jekyll.py</code>
-and <code class="highlighter-rouge">jekyll.tpl</code>.</p>
+<p><strong>Download code:</strong> <a href="https://gist.github.com/tgarc/7d6901858ef708030c19">Venture
+here</a> and download the
+following GitHub gists (thanks to <a href="https://github.com/cscorley">cscorley</a> and
+<a href="https://github.com/tgarc">tgarc</a> for putting these together): <code class="highlighter-rouge">jekyll.py</code> and
+<code class="highlighter-rouge">jekyll.tpl</code>.</p>
 <ul>
   <li>I put the <strong><code class="highlighter-rouge">jekyll.py</code></strong> file in my GitHub pages folder (i.e.
 <code class="highlighter-rouge">~/username.github.io/</code>). Make sure you read the comments and update the
@@ -71,7 +72,8 @@ settings where appropriate.</li>
 convert our notebook, so put it somewhere you put your Jupyter templates.</li>
 </ul>
 
-<p>Go over to your <code class="highlighter-rouge">~/username.github.io/_posts</code> folder and fire up Jupyter:</p>
+<p><strong>Create and convert your notebook:</strong> Go over to your
+<code class="highlighter-rouge">~/username.github.io/_posts</code> folder and fire up Jupyter:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>~/username.github.io/_posts $ jupyter notebook
 </code></pre>
@@ -85,22 +87,30 @@ jekyll.tpl template:</p>
 </code></pre>
 </div>
 
-<p><strong>Tip:</strong> Jekyll needs your post markdown files named in a specific way in order
-to pick them up to build, i.e. “YYYY-MM-DD-title-of-blogpost.md”. If you name
-your notebook with that in mind (e.g. “2017 07 04 How to Publish Jupyter
-Notebooks to Your Jekyll Static Website”), it will automatically be in the right
-file name format when you convert it. Once your finished editing just update the
-title of the post in the markdown file.</p>
+<p><strong>Mind your filename:</strong> Jekyll needs your post markdown files named in a
+specific way in order to pick them up to build, i.e. “YYYY-MM-DD-title-of-
+blogpost.md”. If you name your notebook with that in mind (e.g. “2017 07 04 How
+to Publish Jupyter Notebooks to Your Jekyll Static Website”), it will
+automatically be in the right file name format when you convert it. Once your
+finished editing just update the title of the post in the markdown file.</p>
 
-<p><strong>About Images:</strong> When Jupyter converts the notebook, it saves images into a
-sub-directory of the current directory (in our case, <code class="highlighter-rouge">_posts/</code>). Unfortunately
-there is a bug in Jekyll that throws an exception if it finds a <code class="highlighter-rouge">.png</code> file in
-the <code class="highlighter-rouge">_posts</code> folder (<a href="https://github.com/jekyll/jekyll/issues/5181">read about the issue
+<p><strong>Move images:</strong> When Jupyter converts the notebook, it saves images into a sub-
+directory of the current directory (in our case, <code class="highlighter-rouge">_posts/</code>). Unfortunately there
+is a bug in Jekyll that throws an exception if it finds a <code class="highlighter-rouge">.png</code> file in the
+<code class="highlighter-rouge">_posts</code> folder (<a href="https://github.com/jekyll/jekyll/issues/5181">read about the issue
 here</a>). Pratically that means you
-have to cut+paste the images that were saved into the <code class="highlighter-rouge">/images/</code> folder in the
-root blog directly. If this issue gets fixed that shouldn’t be a problem anymore
-and the <code class="highlighter-rouge">jekyll.py</code> code can be updated to point to the saved images in the sub-
-directory.</p>
+have to cut+paste the images that were saved in the sub-directory into the
+<code class="highlighter-rouge">~/username.github.io/images/</code> folder. If this issue gets fixed that shouldn’t
+be a problem anymore and the <code class="highlighter-rouge">jekyll.py</code> code can be updated to point to the
+saved images in the sub-directory.</p>
+
+<p><strong>Final Steps:</strong> After you’ve converted your notebook to jekyll markdown, it’s
+time to build. Before you do, go into the markdown and make any final changes,
+such adjusting the post title or turning comments on (<a href="http://sgeos.github.io/jekyll/disqus/2016/02/14/adding-
+disqus-to-a-jekyll-blog.html">here’s how you can add
+disqus to your site</a>]. Also make sure that the images have been moved
+so that the <code class="highlighter-rouge">.png</code> files don’t throw an error when you build. Once everything
+looks good, run <code class="highlighter-rouge">jekyll build</code> and the html files will be generated.</p>
 
 <h2 id="example">Example</h2>
 
